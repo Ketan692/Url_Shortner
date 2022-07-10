@@ -1,5 +1,6 @@
 import requests
 from flask import Flask, render_template, request
+import pyperclip
 
 app = Flask(__name__)
 
@@ -18,15 +19,23 @@ def home_page():
 
 @app.route("/new_url", methods=["GET", "POST"])
 def results():
-    if request.method == "POST":
+    try:
+        if len(request.form.get("input")) != 0:
+            if request.method == "POST":
+                site = request.form.get("input")
+                data = '{ "long_url": "https://bitly.com/"}'
+                x = data[:15] + site + data[-2:]
+                new_data = x
+
+                response = requests.post(url=URL, headers=HEADERS, data=new_data).json()["link"]
+                pyperclip.copy(response)
+                return render_template("index.html", name=response, pre=site)
+        else:
+            return render_template("index.html")
+    except KeyError:
         site = request.form.get("input")
-        data = '{ "long_url": "https://bitly.com/"}'
-        x = data[:15] + site + data[-2:]
-        new_data = x
-
-        response = requests.post(url=URL, headers=HEADERS, data=new_data).json()["link"]
-
-        return render_template("index.html", name=response, pre=site)
+        return  render_template("index.html", game="Please Enter Valid Input!!!", pre=site, fame="*the url you have"
+                                                                                                 " entered can be already shorterned, kindly enter long url.")
 
 
 if __name__ == "__main__":

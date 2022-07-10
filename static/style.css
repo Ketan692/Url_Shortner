@@ -1,10 +1,10 @@
 body {
-  background-color: grey;
+  background-color: #0E185F;
 }
 
 .title {
   text-align: center;
-  color: white;
+  color: #2FA4FF;
   font-family: 'Ubuntu', sans-serif;
   font-size: 8rem;
   padding-top: 2%;
@@ -15,17 +15,26 @@ body {
   text-align: center;
 }
 
+.ddd {
+  color: #E8FFC2;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.abc {
+  color: red;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+
 .final-button {
   margin-top: 2%;
 }
 
 h3 {
+  color: #2FA4FF;
   padding-top: 10px;
-}
-
-h1 {
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 h5 {
