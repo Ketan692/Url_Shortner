@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>url shortener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/f06e07223e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+<div class="title">
+    URL <i class="fa-solid fa-link"></i> SHORTNER
+</div>
+<div class="mb-3">
+    <form action="{{ url_for('results') }}" method="post">
+        <input type="url" value="{{ pre }}" class="form-control form-control-lg" name="input"
+               id="exampleFormControlInput1" placeholder="Paste your link here...">
+        <button type="submit" class="btn final-button btn-dark btn-lg">shorten</button>
+    </form>
+    {% if name: %}
+    <h3>Here's your link👇👇👇</h3>
+    <h1>{{ name }}</h1>
+    <h5>copied on clipboard <i class="fa-regular fa-face-smile"></i></h5>
+    {% endif %}
+</div>
+
+</body>
+
+</html>

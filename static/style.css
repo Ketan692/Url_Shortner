@@ -1,0 +1,34 @@
+body {
+  background-color: grey;
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 8rem;
+  padding-top: 2%;
+}
+
+.mb-3 {
+  padding: 3% 18%;
+  text-align: center;
+}
+
+.final-button {
+  margin-top: 2%;
+}
+
+h3 {
+  padding-top: 10px;
+}
+
+h1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+h5 {
+  padding-top: 10px;
+  color: #fff;
+}
